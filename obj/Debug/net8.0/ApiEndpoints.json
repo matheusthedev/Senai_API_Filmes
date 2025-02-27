@@ -80,14 +80,14 @@
   },
   {
     "ContainingType": "api_filmes_senai.Controllers.FilmeController",
-    "Method": "GetFilmesPorGenero",
-    "RelativePath": "api/Filme/PorGenero/{idGenero}",
+    "Method": "GetByGenero",
+    "RelativePath": "api/Filme/ListarPorGenero/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "idGenero",
+        "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
       }

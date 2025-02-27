@@ -99,17 +99,20 @@ namespace api_filmes_senai.Controllers
             }
         }
 
-        [HttpGet("genero/{idGenero}")]
-        public IActionResult ListarPorGenero(Guid idGenero)
+        [HttpGet("ListarPorGenero/{id}")]
+        public IActionResult GetByGenero(Guid id)
         {
-            var filmes = _filmeRepository.ListarPorGenero(idGenero);
-
-            if (filmes == null || !filmes.Any())
+            try
             {
-                return NotFound(new { mensagem = "Nenhum filme encontrado para este gênero." });
-            }
+                List<Filme> listaDeFilmePorGenero = _filmeRepository.ListarPorGenero(id);
 
-            return Ok(filmes);
+                return Ok(listaDeFilmePorGenero);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
         }
 
     }
