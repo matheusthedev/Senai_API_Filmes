@@ -16,6 +16,8 @@ builder.Services.AddScoped<IGeneroRepository,GeneroRepository>();
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IFilmeRepository, FilmeRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
 
 var app = builder.Build();
 
