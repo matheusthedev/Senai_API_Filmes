@@ -15,7 +15,7 @@ namespace api_filmes_senai.Repositories
             _context = context;
         }
         public Usuario BuscarPorEmailESenha(string email, string senha)
-        {
+        {   
             try
             {
                 Usuario usuarioBuscado = _context.Usuarios.FirstOrDefault(u => u.Email == email)!;
@@ -29,8 +29,8 @@ namespace api_filmes_senai.Repositories
                         return usuarioBuscado;
                     }
 
-                    return null!;
                 }
+                    return null!;
             }
             catch (Exception)
             {

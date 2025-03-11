@@ -1,6 +1,7 @@
 ﻿using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
 using api_filmes_senai.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,7 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
 
         public IActionResult Post(Filme novoFilme)
@@ -65,6 +67,7 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
 
         public IActionResult Delete(Guid id)
@@ -82,6 +85,7 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut("{id}")]
 
         public IActionResult Put(Guid id, Filme filme)

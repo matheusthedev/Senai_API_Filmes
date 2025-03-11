@@ -25,10 +25,31 @@ namespace api_filmes_senai.Controllers
 
                 return StatusCode(201, usuario);
             }
-            catch (Exception error) 
+            catch (Exception error)
             {
                 return BadRequest(error.Message);
             }
         }
+
+        [HttpGet("{id}")]
+
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                Usuario usuario = _usuarioRepository.BuscarPorId(id);
+
+                if (usuario != null)
+                {
+                    return Ok(usuario);
+                }
+                return null!;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }
